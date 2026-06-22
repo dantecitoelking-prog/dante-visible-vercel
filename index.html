@@ -208,6 +208,19 @@ ul{list-style:none}
 .form__sub{width:100%;padding:14px;background:var(--green);color:#fff;border-radius:10px;font-size:15px;font-weight:500;font-family:var(--font-b);cursor:pointer;transition:all var(--t);border:none;margin-top:4px}
 .form__sub:hover{background:var(--green-bright);transform:translateY(-1px);box-shadow:0 8px 28px var(--green-glow)}
 
+/* ── VITRINA DIGITAL ── */
+.sec--warm{background:#F5F5F3;color:#0D0D0D}
+.sec--warm .eyebrow{color:#178F5C}
+.sec--warm .sec__sub{color:#777}
+.vitrina__center{text-align:center}
+.vitrina__center .sec__sub{margin:16px auto 0;max-width:620px}
+.vitrina__note{margin-top:32px;text-align:center;font-size:14px;color:#888}
+.vitrina__cta-wrap{text-align:center;margin-top:20px}
+.vitrina__cta{display:inline-flex;align-items:center;gap:9px;background:#1A9E6E;color:#fff;padding:13px 28px;border-radius:12px;font-size:15px;font-weight:500;transition:all var(--t)}
+.vitrina__cta:hover{background:#168A5E;transform:translateY(-1px);box-shadow:0 8px 28px rgba(26,158,110,.25)}
+.vitrina__banner{margin-top:48px;background:#C8F0E0;border-radius:var(--r-lg);padding:22px 32px;text-align:center}
+.vitrina__banner p{font-size:15px;color:#0D6B42;font-weight:500;line-height:1.6}
+
 /* ── FOOTER ── */
 .footer{background:#030303;border-top:1px solid var(--border);padding:60px 0 40px}
 .footer__top{display:grid;gap:36px}
@@ -231,7 +244,8 @@ ul{list-style:none}
     <a href="#inicio" class="nav__logo">Dante<em>Visible</em></a>
     <div class="nav__links">
       <a href="#inicio" class="nav__link">Inicio</a>
-      <a href="#servicios" class="nav__link">Planes</a>
+      <a href="#servicios" class="nav__link">Planes Google</a>
+      <a href="#vitrina" class="nav__link">Vitrina Digital</a>
       <a href="#porque" class="nav__link">Por qué nosotros</a>
       <a href="#contacto" class="nav__link">Contacto</a>
     </div>
@@ -248,7 +262,8 @@ ul{list-style:none}
 <!-- MOBILE MENU -->
 <div class="mob" id="mob" aria-hidden="true">
   <a href="#inicio" class="mob__link" onclick="closeMob()">Inicio</a>
-  <a href="#servicios" class="mob__link" onclick="closeMob()">Planes</a>
+  <a href="#servicios" class="mob__link" onclick="closeMob()">Planes Google</a>
+  <a href="#vitrina" class="mob__link" onclick="closeMob()">Vitrina Digital</a>
   <a href="#porque" class="mob__link" onclick="closeMob()">Por qué nosotros</a>
   <a href="#contacto" class="mob__link" onclick="closeMob()">Contacto</a>
   <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20una%20auditor%C3%ADa%20gratuita%20de%20mi%20perfil%20de%20Google" target="_blank" rel="noopener noreferrer" class="mob__cta" onclick="closeMob()">Hablar por WhatsApp</a>
@@ -393,6 +408,90 @@ ul{list-style:none}
 
     </div>
     <p class="plans__note rev">La competencia cobra entre $150.000 y $300.000 por lo mismo.</p>
+  </div>
+</section>
+
+<!-- VITRINA DIGITAL -->
+<section id="vitrina" class="sec sec--warm">
+  <div class="wrap">
+    <div class="rev vitrina__center">
+      <span class="eyebrow">Vitrina Digital</span>
+      <h2 class="sec__h">Vitrina Digital — Tu negocio profesional en internet</h2>
+      <p class="sec__sub">Diseñamos tu página web en 7 días para que tus clientes te encuentren, confíen y te llamen.</p>
+    </div>
+
+    <div class="plans__grid">
+
+      <!-- Vitrina Básica -->
+      <div class="rev plan">
+        <div class="plan__name">Vitrina Básica</div>
+        <div class="plan__price">
+          <span class="plan__amt">$199.000</span>
+          <span class="plan__per">pago único</span>
+        </div>
+        <div class="plan__hr"></div>
+        <ul class="plan__feats">
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Diseño profesional mobile-first</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Secciones: inicio, servicios, contacto y ubicación</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Botón WhatsApp directo</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Google Maps integrado</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Entrega en 7 días</li>
+        </ul>
+        <a href="#contacto" class="plan__btn plan__btn--out">Empezar ahora</a>
+      </div>
+
+      <!-- Vitrina Pro -->
+      <div class="rev d1 plan plan--feat">
+        <span class="plan__badge">Más popular</span>
+        <div class="plan__name">Vitrina Pro</div>
+        <div class="plan__price">
+          <span class="plan__amt">$299.000</span>
+          <span class="plan__per">pago único</span>
+        </div>
+        <div class="plan__hr"></div>
+        <ul class="plan__feats">
+          <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Todo lo de Vitrina Básica</li>
+          <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Identidad visual completa (colores, tipografía, logo)</li>
+          <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Formulario de contacto</li>
+          <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sección de reseñas y testimonios</li>
+          <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Animaciones suaves</li>
+          <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><strong>Entrega en 7 días</strong></li>
+        </ul>
+        <a href="#contacto" class="plan__btn plan__btn--fill">Empezar ahora</a>
+      </div>
+
+      <!-- Vitrina Pro + Google -->
+      <div class="rev d2 plan">
+        <div class="plan__name">Vitrina Pro + Google</div>
+        <div class="plan__price">
+          <span class="plan__amt">$399.000</span>
+          <span class="plan__per">pago único</span>
+        </div>
+        <div class="plan__hr"></div>
+        <ul class="plan__feats">
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Todo lo de Vitrina Pro</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Gestión Google My Business primer mes incluido</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Optimización inicial del perfil de Google</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Reporte de métricas mes 1</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Entrega en 7 días</li>
+        </ul>
+        <a href="#contacto" class="plan__btn plan__btn--out">Empezar ahora</a>
+      </div>
+
+    </div>
+
+    <p class="vitrina__note rev">No incluye tienda online ni ecommerce. ¿Necesitas algo especial? Conversemos.</p>
+    <div class="vitrina__cta-wrap rev">
+      <a href="#contacto" class="vitrina__cta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Quiero mi Vitrina Digital
+      </a>
+    </div>
+
+    <div class="vitrina__banner rev">
+      <p>¿Ya tienes tu web? Mantenla actualizada por solo <strong>$40.000/mes</strong> — cambios, actualizaciones y soporte incluido.</p>
+    </div>
+
   </div>
 </section>
 
