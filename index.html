@@ -221,6 +221,34 @@ ul{list-style:none}
 .vitrina__banner{margin-top:48px;background:#C8F0E0;border-radius:var(--r-lg);padding:22px 32px;text-align:center}
 .vitrina__banner p{font-size:15px;color:#0D6B42;font-weight:500;line-height:1.6}
 
+/* ── DEMOS ── */
+.demos__grid{margin-top:64px;display:grid;gap:16px}
+@media(min-width:680px){.demos__grid{grid-template-columns:repeat(3,1fr)}}
+
+.demo-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:all var(--t);text-decoration:none}
+.demo-card:hover{border-color:var(--border-mid);background:var(--card-hover);transform:translateY(-5px);box-shadow:0 24px 56px rgba(0,0,0,.4)}
+
+.demo-card__preview{height:160px;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(255,255,255,.02)}
+.demo-card__mockup{width:100%;max-width:220px;background:#0A0A0A;border-radius:8px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.07)}
+.dmk__bar{display:flex;gap:4px;padding:6px 10px;background:#111;border-bottom:1px solid rgba(255,255,255,.05)}
+.dmk__bar span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15)}
+.dmk__hero{height:80px;position:relative;display:flex;align-items:center;padding:14px 14px}
+.dmk__accent{position:absolute;top:0;left:0;right:0;height:2px;opacity:.9}
+.dmk__lines{display:flex;flex-direction:column;gap:5px}
+.dmk__line{height:5px;border-radius:2px}
+.dmk__line--lg{width:100px}
+.dmk__line--md{width:76px}
+.dmk__line--sm{height:4px;border-radius:2px;margin-top:2px}
+
+.demo-card__body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+.demo-card__tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:100px;color:var(--tc);background:var(--tb);margin-bottom:12px;width:fit-content}
+.demo-card__h{font-family:var(--font-d);font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.025em;margin-bottom:8px}
+.demo-card__p{font-size:13.5px;color:var(--text-muted);line-height:1.65;flex:1;margin-bottom:18px}
+.demo-card__link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--green);transition:gap var(--t)}
+.demo-card:hover .demo-card__link{gap:10px}
+
+.demos__cta{margin-top:40px;text-align:center;font-size:15px;color:var(--text-muted)}
+
 /* ── FOOTER ── */
 .footer{background:#030303;border-top:1px solid var(--border);padding:60px 0 40px}
 .footer__top{display:grid;gap:36px}
@@ -247,6 +275,7 @@ ul{list-style:none}
       <a href="#servicios" class="nav__link">Planes Google</a>
       <a href="#vitrina" class="nav__link">Vitrina Digital</a>
       <a href="#porque" class="nav__link">Por qué nosotros</a>
+      <a href="#demos" class="nav__link">Demos</a>
       <a href="#contacto" class="nav__link">Contacto</a>
     </div>
     <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20una%20auditor%C3%ADa%20gratuita%20de%20mi%20perfil%20de%20Google" target="_blank" rel="noopener noreferrer" class="nav__cta">
@@ -265,6 +294,7 @@ ul{list-style:none}
   <a href="#servicios" class="mob__link" onclick="closeMob()">Planes Google</a>
   <a href="#vitrina" class="mob__link" onclick="closeMob()">Vitrina Digital</a>
   <a href="#porque" class="mob__link" onclick="closeMob()">Por qué nosotros</a>
+  <a href="#demos" class="mob__link" onclick="closeMob()">Demos</a>
   <a href="#contacto" class="mob__link" onclick="closeMob()">Contacto</a>
   <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20una%20auditor%C3%ADa%20gratuita%20de%20mi%20perfil%20de%20Google" target="_blank" rel="noopener noreferrer" class="mob__cta" onclick="closeMob()">Hablar por WhatsApp</a>
 </div>
@@ -616,6 +646,101 @@ ul{list-style:none}
         </form>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<!-- DEMOS -->
+<section id="demos" class="sec sec--dark">
+  <div class="wrap">
+    <div class="rev">
+      <span class="eyebrow">Ejemplos reales</span>
+      <h2 class="sec__h">Mira cómo queda tu sitio</h2>
+      <p class="sec__sub">Estos son demos de Vitrina Digital que hemos creado. Así se verá el tuyo.</p>
+    </div>
+
+    <div class="demos__grid">
+
+      <a href="demos/taller-mecanico.html" target="_blank" rel="noopener" class="demo-card rev">
+        <div class="demo-card__preview demo-card__preview--taller">
+          <div class="demo-card__mockup">
+            <div class="dmk__bar"><span></span><span></span><span></span></div>
+            <div class="dmk__hero" style="background:linear-gradient(135deg,#161616,#222)">
+              <div class="dmk__accent" style="background:#E8671A"></div>
+              <div class="dmk__lines">
+                <div class="dmk__line dmk__line--lg" style="background:rgba(255,255,255,.7)"></div>
+                <div class="dmk__line dmk__line--md" style="background:rgba(255,255,255,.35)"></div>
+                <div class="dmk__line dmk__line--sm" style="background:#E8671A;width:56px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="demo-card__body">
+          <div class="demo-card__tag" style="--tc:#E8671A;--tb:rgba(232,103,26,.1)">Taller mecánico</div>
+          <h3 class="demo-card__h">Taller Martínez</h3>
+          <p class="demo-card__p">Vitrina Básica — tema industrial oscuro con acento naranja.</p>
+          <span class="demo-card__link">
+            Ver demo
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="demos/restaurante.html" target="_blank" rel="noopener" class="demo-card rev d1">
+        <div class="demo-card__preview demo-card__preview--rest">
+          <div class="demo-card__mockup">
+            <div class="dmk__bar"><span></span><span></span><span></span></div>
+            <div class="dmk__hero" style="background:linear-gradient(135deg,#2A0A06,#1A0804)">
+              <div class="dmk__accent" style="background:#C0392B"></div>
+              <div class="dmk__lines">
+                <div class="dmk__line dmk__line--lg" style="background:rgba(251,240,230,.7)"></div>
+                <div class="dmk__line dmk__line--md" style="background:rgba(251,240,230,.35)"></div>
+                <div class="dmk__line dmk__line--sm" style="background:#C0392B;width:64px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="demo-card__body">
+          <div class="demo-card__tag" style="--tc:#C0392B;--tb:rgba(192,57,43,.1)">Restaurante</div>
+          <h3 class="demo-card__h">El Fogón de la Abuela</h3>
+          <p class="demo-card__p">Vitrina Pro — cocina chilena con carta, reseñas y reservas.</p>
+          <span class="demo-card__link">
+            Ver demo
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="demos/barberia.html" target="_blank" rel="noopener" class="demo-card rev d2">
+        <div class="demo-card__preview demo-card__preview--barb">
+          <div class="demo-card__mockup">
+            <div class="dmk__bar"><span></span><span></span><span></span></div>
+            <div class="dmk__hero" style="background:linear-gradient(135deg,#0A0A0A,#161616)">
+              <div class="dmk__accent" style="background:#C9A84C"></div>
+              <div class="dmk__lines">
+                <div class="dmk__line dmk__line--lg" style="background:rgba(240,237,230,.7)"></div>
+                <div class="dmk__line dmk__line--md" style="background:rgba(240,237,230,.35)"></div>
+                <div class="dmk__line dmk__line--sm" style="background:#C9A84C;width:52px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="demo-card__body">
+          <div class="demo-card__tag" style="--tc:#C9A84C;--tb:rgba(201,168,76,.1)">Barbería</div>
+          <h3 class="demo-card__h">Barbería Urquiza</h3>
+          <p class="demo-card__p">Vitrina Pro — estilo premium con servicios, precios y reseñas.</p>
+          <span class="demo-card__link">
+            Ver demo
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="demos__cta rev">
+      <p>¿Tu rubro no aparece? <a href="#contacto" style="color:var(--green)">Cuéntame de tu negocio</a> y te muestro un demo personalizado.</p>
     </div>
   </div>
 </section>

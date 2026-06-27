@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>El Fogón de la Abuela — Cocina Chilena · Providencia</title>
+<meta name="description" content="Restaurante de cocina chilena tradicional en Providencia. Almuerzo casero, sabores de siempre y atención de familia."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+:root{
+  --bg:#FBF8F3;
+  --bg2:#F4EFE6;
+  --card:#FFFFFF;
+  --card-h:#FDFAF6;
+  --border:rgba(0,0,0,0.07);
+  --border2:rgba(0,0,0,0.12);
+  --red:#C0392B;
+  --red-h:#A93226;
+  --red-glow:rgba(192,57,43,0.18);
+  --red-subtle:rgba(192,57,43,0.07);
+  --amber:#D4820A;
+  --text:#1A1208;
+  --text-m:#6B5D48;
+  --text-s:#A89880;
+  --font:'DM Sans',sans-serif;
+  --r:12px;
+  --r2:18px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --t:0.24s;
+}
+
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;background:none;font:inherit}
+ul{list-style:none}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.wrap{padding:0 40px}}
+
+.rev{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rev.in{opacity:1;transform:none}
+.rev.d1{transition-delay:.08s}.rev.d2{transition-delay:.16s}.rev.d3{transition-delay:.24s}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:background var(--t),border-color var(--t),box-shadow var(--t);border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(251,248,243,0.94);backdrop-filter:blur(20px);border-color:var(--border);box-shadow:0 1px 24px rgba(0,0,0,.06)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-size:18px;font-weight:800;letter-spacing:-.03em;color:var(--text);line-height:1.1}
+.nav__logo span{color:var(--red)}
+.nav__logo sub{font-size:10px;font-weight:500;color:var(--text-m);display:block;letter-spacing:.06em;text-transform:uppercase;margin-top:1px}
+.nav__links{display:none;gap:28px}
+@media(min-width:768px){.nav__links{display:flex}}
+.nav__link{font-size:14px;color:var(--text-m);transition:color var(--t);font-weight:500}
+.nav__link:hover{color:var(--text)}
+.nav__cta{display:none;align-items:center;gap:8px;background:var(--red);color:#fff;font-size:14px;font-weight:600;padding:10px 20px;border-radius:10px;transition:all var(--t)}
+.nav__cta:hover{background:var(--red-h);transform:translateY(-1px);box-shadow:0 8px 24px var(--red-glow)}
+@media(min-width:768px){.nav__cta{display:flex}}
+.nav__burger{display:flex;flex-direction:column;gap:5px;padding:4px}
+@media(min-width:768px){.nav__burger{display:none}}
+.nav__burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .3s}
+.nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger.open span:nth-child(2){opacity:0}
+.nav__burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob{position:fixed;inset:0;background:rgba(251,248,243,.97);backdrop-filter:blur(20px);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mob.open{opacity:1;pointer-events:all}
+.mob__link{font-size:32px;font-weight:700;color:var(--text-m);padding:8px 0;transition:color var(--t)}
+.mob__link:hover{color:var(--text)}
+.mob__cta{margin-top:28px;background:var(--red);color:#fff;padding:14px 36px;border-radius:12px;font-size:16px;font-weight:600}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:linear-gradient(160deg,#2A0A06 0%,#1A0804 60%,#0D0402 100%)}
+.hero__tex{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23000'/%3E%3Crect width='1' height='1' fill='%23ffffff05'/%3E%3C/svg%3E")}
+.hero__glow{position:absolute;top:-5%;left:-10%;width:700px;height:600px;background:radial-gradient(ellipse,rgba(192,57,43,.18) 0%,transparent 65%)}
+.hero__glow2{position:absolute;bottom:-10%;right:5%;width:500px;height:400px;background:radial-gradient(ellipse,rgba(212,130,10,.08) 0%,transparent 65%)}
+
+.hero__body{position:relative;z-index:2;max-width:760px}
+.hero__eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.28);border-radius:100px;padding:5px 14px;font-size:12.5px;font-weight:600;color:#E57565;letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+.hero__dot{width:6px;height:6px;border-radius:50%;background:#E57565;animation:blink 2s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero__h1{font-size:clamp(36px,7vw,78px);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-bottom:20px;color:#FBF0E6}
+.hero__h1 em{color:#E57565;font-style:normal}
+.hero__sub{font-size:clamp(16px,2vw,19px);color:rgba(251,240,230,0.6);line-height:1.7;max-width:520px;margin-bottom:36px}
+
+.hero__btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:52px}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--red);color:#fff;font-size:15px;font-weight:600;padding:14px 26px;border-radius:12px;transition:all var(--t)}
+.btn-wa:hover{background:var(--red-h);transform:translateY(-2px);box-shadow:0 12px 36px rgba(192,57,43,.35)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;color:rgba(251,240,230,0.75);font-size:15px;font-weight:500;padding:14px 26px;border-radius:12px;border:1px solid rgba(255,255,255,.15);transition:all var(--t)}
+.btn-s:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.25);transform:translateY(-1px)}
+
+.hero__reviews{display:inline-flex;align-items:center;gap:12px;padding:10px 20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;font-size:13px;color:rgba(251,240,230,.65)}
+.stars{display:flex;gap:2px}
+.stars svg{fill:#FFC107}
+
+/* ── MENU ── */
+.sec{padding:96px 0}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.sec__h{font-size:clamp(28px,4.5vw,50px);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:12px}
+.sec__sub{font-size:17px;color:var(--text-m);line-height:1.68;max-width:480px}
+
+.menu__grid{margin-top:56px;display:grid;gap:14px}
+@media(min-width:640px){.menu__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.menu__grid{grid-template-columns:repeat(3,1fr)}}
+
+.menu-c{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:all var(--t)}
+.menu-c:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,.1)}
+.menu-c__img{height:160px;display:flex;align-items:center;justify-content:center;font-size:56px;position:relative}
+.menu-c__body{padding:20px 22px 24px}
+.menu-c__cat{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+.menu-c__h{font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.02em;margin-bottom:8px}
+.menu-c__p{font-size:13.5px;color:var(--text-m);line-height:1.65;margin-bottom:14px}
+.menu-c__price{font-size:17px;font-weight:800;color:var(--red);letter-spacing:-.02em}
+
+/* bg colors per card */
+.mc1{background:linear-gradient(135deg,#3D1F0D,#5C2E14)}
+.mc2{background:linear-gradient(135deg,#1A2E1A,#2D4A2D)}
+.mc3{background:linear-gradient(135deg,#1A1A2E,#2A2A4A)}
+.mc4{background:linear-gradient(135deg,#2E1A0D,#4A2E18)}
+.mc5{background:linear-gradient(135deg,#2E2A1A,#4A4220)}
+.mc6{background:linear-gradient(135deg,#1A0D0D,#3D1414)}
+
+/* ── REVIEWS ── */
+.sec--warm{background:#2A1508;color:#FBF0E6}
+.sec--warm .eyebrow{color:#E57565}
+.sec--warm .sec__sub{color:rgba(251,240,230,.6)}
+.rev__grid{margin-top:56px;display:grid;gap:14px}
+@media(min-width:768px){.rev__grid{grid-template-columns:repeat(3,1fr)}}
+
+.rev-c{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r2);padding:28px 26px;transition:all var(--t)}
+.rev-c:hover{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.08)}
+.rev-c__stars{display:flex;gap:3px;margin-bottom:14px}
+.rev-c__stars svg{fill:#FFC107;width:16px;height:16px}
+.rev-c__text{font-size:14px;line-height:1.72;color:rgba(251,240,230,.75);margin-bottom:18px;font-style:italic}
+.rev-c__author{font-size:13px;font-weight:600;color:rgba(251,240,230,.9)}
+.rev-c__via{font-size:12px;color:rgba(251,240,230,.4);margin-top:2px}
+
+/* ── CONTACT ── */
+.contact__grid{display:grid;gap:48px}
+@media(min-width:900px){.contact__grid{grid-template-columns:1fr 1fr;align-items:start}}
+.contact__h{font-size:clamp(26px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
+.contact__p{font-size:16px;color:var(--text-m);line-height:1.7;margin-bottom:32px}
+.wa-big{display:inline-flex;align-items:center;gap:12px;background:var(--red);color:#fff;padding:16px 32px;border-radius:14px;font-size:16px;font-weight:700;transition:all var(--t);margin-bottom:32px}
+.wa-big:hover{background:var(--red-h);transform:translateY(-2px);box-shadow:0 12px 40px var(--red-glow)}
+.info-rows{display:flex;flex-direction:column;gap:16px}
+.info-row{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:var(--text-m)}
+.info-row__ico{width:38px;height:38px;border-radius:10px;background:var(--red-subtle);border:1px solid rgba(192,57,43,.15);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0;margin-top:1px}
+.info-row strong{display:block;color:var(--text);font-weight:600;margin-bottom:2px}
+
+.map-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.map-ph{height:240px;background:linear-gradient(135deg,#FBF0E6 0%,#F0E8D8 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative}
+.map-ph::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(192,57,43,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(192,57,43,.04) 1px,transparent 1px);background-size:32px 32px}
+.map-pin{width:48px;height:48px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;color:#fff;position:relative;z-index:1;box-shadow:0 0 0 12px rgba(192,57,43,.12)}
+.map-ph p{font-size:14px;color:var(--text-m);position:relative;z-index:1;text-align:center;font-weight:500}
+.map-link{display:block;padding:14px 20px;text-align:center;font-size:14px;font-weight:600;color:var(--red);border-top:1px solid var(--border);transition:background var(--t)}
+.map-link:hover{background:var(--red-subtle)}
+
+/* ── FOOTER ── */
+.footer{background:#1A0804;border-top:1px solid rgba(255,255,255,.06);padding:40px 0}
+.footer__inner{display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center}
+@media(min-width:640px){.footer__inner{flex-direction:row;justify-content:space-between}}
+.footer__logo{font-size:17px;font-weight:800;color:#FBF0E6;letter-spacing:-.02em}
+.footer__logo span{color:#E57565}
+.footer__copy{font-size:13px;color:rgba(251,240,230,.35)}
+
+/* ── DEMO BANNER ── */
+.demo-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:999;display:flex;align-items:center;gap:10px;background:#1DB97A;color:#fff;padding:11px 22px;border-radius:100px;font-size:13.5px;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.1);white-space:nowrap;font-family:var(--font)}
+.demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.demo-bar a:hover{opacity:.85}
+.demo-bar__dot{width:7px;height:7px;border-radius:50%;background:#fff;opacity:.8}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#inicio" class="nav__logo">
+      El Fogón <span>de la Abuela</span>
+      <sub>Cocina Chilena · Providencia</sub>
+    </a>
+    <div class="nav__links">
+      <a href="#inicio" class="nav__link">Inicio</a>
+      <a href="#menu" class="nav__link">Carta</a>
+      <a href="#reseñas" class="nav__link">Reseñas</a>
+      <a href="#contacto" class="nav__link">Ubicación</a>
+    </div>
+    <a href="https://wa.me/56988686466?text=Hola%2C%20quisiera%20reservar%20una%20mesa%20en%20El%20Fog%C3%B3n%20de%20la%20Abuela" target="_blank" rel="noopener" class="nav__cta">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+      Reservar mesa
+    </a>
+    <button class="nav__burger" id="burger" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mob" id="mob">
+  <a href="#inicio" class="mob__link" onclick="closeMob()">Inicio</a>
+  <a href="#menu" class="mob__link" onclick="closeMob()">Carta</a>
+  <a href="#reseñas" class="mob__link" onclick="closeMob()">Reseñas</a>
+  <a href="#contacto" class="mob__link" onclick="closeMob()">Ubicación</a>
+  <a href="https://wa.me/56988686466?text=Hola%2C%20quisiera%20reservar%20una%20mesa%20en%20El%20Fog%C3%B3n%20de%20la%20Abuela" target="_blank" rel="noopener" class="mob__cta" onclick="closeMob()">Reservar mesa</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero__bg">
+    <div class="hero__tex"></div>
+    <div class="hero__glow"></div>
+    <div class="hero__glow2"></div>
+  </div>
+  <div class="wrap">
+    <div class="hero__body">
+      <div class="hero__eyebrow rev in">
+        <span class="hero__dot"></span>
+        Providencia · Desde 1997
+      </div>
+      <h1 class="hero__h1 rev in">
+        Sabor de casa,<br><em>de verdad</em>
+      </h1>
+      <p class="hero__sub rev in">
+        Cocina chilena de la que ya no se consigue en todos lados. Cazuela, pastel de choclo, empanadas. Todo hecho con cariño, como siempre lo hizo la abuela.
+      </p>
+      <div class="hero__btns rev in">
+        <a href="https://wa.me/56988686466?text=Hola%2C%20quisiera%20reservar%20una%20mesa%20en%20El%20Fog%C3%B3n%20de%20la%20Abuela" target="_blank" rel="noopener" class="btn-wa">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+          Reservar mesa
+        </a>
+        <a href="#menu" class="btn-s">
+          Ver carta
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+      </div>
+      <div class="hero__reviews rev in">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" width="15" height="15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" width="15" height="15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" width="15" height="15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" width="15" height="15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" width="15" height="15"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span>4.9 · +180 reseñas en Google</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="sec" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="rev">
+      <span class="eyebrow">Nuestra carta</span>
+      <h2 class="sec__h">Lo más pedido</h2>
+      <p class="sec__sub">Preparado diario con ingredientes frescos del mercado.</p>
+    </div>
+    <div class="menu__grid">
+
+      <div class="rev menu-c">
+        <div class="menu-c__img mc1">🍲</div>
+        <div class="menu-c__body">
+          <div class="menu-c__cat">Cazuela</div>
+          <h3 class="menu-c__h">Cazuela de vacuno</h3>
+          <p class="menu-c__p">Con papas, zapallo, choclo y arroz. La receta de siempre, sin apuros.</p>
+          <div class="menu-c__price">$5.200</div>
+        </div>
+      </div>
+
+      <div class="rev d1 menu-c">
+        <div class="menu-c__img mc2">🥧</div>
+        <div class="menu-c__body">
+          <div class="menu-c__cat">Clásico</div>
+          <h3 class="menu-c__h">Pastel de choclo</h3>
+          <p class="menu-c__p">Con pino, huevo duro, aceituna y pollo. Gratinado al horno.</p>
+          <div class="menu-c__price">$5.800</div>
+        </div>
+      </div>
+
+      <div class="rev d2 menu-c">
+        <div class="menu-c__img mc3">🥟</div>
+        <div class="menu-c__body">
+          <div class="menu-c__cat">Entrada</div>
+          <h3 class="menu-c__h">Empanadas al horno</h3>
+          <p class="menu-c__p">Pino chileno tradicional. La masa, amasada aquí. Crocante y jugosa.</p>
+          <div class="menu-c__price">$2.200 c/u</div>
+        </div>
+      </div>
+
+      <div class="rev menu-c">
+        <div class="menu-c__img mc4">🍗</div>
+        <div class="menu-c__body">
+          <div class="menu-c__cat">Almuerzo</div>
+          <h3 class="menu-c__h">Pollo arvejado</h3>
+          <p class="menu-c__p">Con arroz blanco y ensalada chilena. Plato completo, precio justo.</p>
+          <div class="menu-c__price">$4.900</div>
+        </div>
+      </div>
+
+      <div class="rev d1 menu-c">
+        <div class="menu-c__img mc5">🫕</div>
+        <div class="menu-c__body">
+          <div class="menu-c__cat">Guiso</div>
+          <h3 class="menu-c__h">Porotos con riendas</h3>
+          <p class="menu-c__p">Porotos rosados con tallarines, longaniza y ají de color. Contundente.</p>
+          <div class="menu-c__price">$4.600</div>
+        </div>
+      </div>
+
+      <div class="rev d2 menu-c">
+        <div class="menu-c__img mc6">🍮</div>
+        <div class="menu-c__body">
+          <div class="menu-c__cat">Postre</div>
+          <h3 class="menu-c__h">Leche asada</h3>
+          <p class="menu-c__p">Casera, con caramelo artesanal. Para terminar el almuerzo bien.</p>
+          <div class="menu-c__price">$1.800</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reseñas" class="sec sec--warm">
+  <div class="wrap">
+    <div class="rev">
+      <span class="eyebrow">Lo que dicen</span>
+      <h2 class="sec__h" style="color:#FBF0E6">Reseñas en Google</h2>
+      <p class="sec__sub">Más de 180 clientes satisfechos nos avalan.</p>
+    </div>
+    <div class="rev__grid">
+
+      <div class="rev rev-c">
+        <div class="rev-c__stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="rev-c__text">"La cazuela más rica que he probado en Santiago. Generosa, caliente, con sabor de hogar. Vuelvo todas las semanas."</p>
+        <div class="rev-c__author">Patricia R.</div>
+        <div class="rev-c__via">Reseña en Google · hace 2 semanas</div>
+      </div>
+
+      <div class="rev d1 rev-c">
+        <div class="rev-c__stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="rev-c__text">"El pastel de choclo es una obra maestra. Y el local es acogedor, como comer en casa de alguien que cocina bien."</p>
+        <div class="rev-c__author">Rodrigo M.</div>
+        <div class="rev-c__via">Reseña en Google · hace 1 mes</div>
+      </div>
+
+      <div class="rev d2 rev-c">
+        <div class="rev-c__stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="rev-c__text">"Las empanadas de pino son las mejores de la zona. Porciones generosas y precio honesto. Muy recomendado."</p>
+        <div class="rev-c__author">Carolina V.</div>
+        <div class="rev-c__via">Reseña en Google · hace 3 semanas</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto" class="sec" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="contact__grid">
+
+      <div class="rev">
+        <span class="eyebrow">Dónde estamos</span>
+        <h2 class="contact__h">¿Reservas o pedidos?</h2>
+        <p class="contact__p">Escríbenos por WhatsApp para reservar tu mesa o pedir para llevar. Respondemos rápido.</p>
+        <a href="https://wa.me/56988686466?text=Hola%2C%20quisiera%20reservar%20una%20mesa%20en%20El%20Fog%C3%B3n%20de%20la%20Abuela" target="_blank" rel="noopener" class="wa-big">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+          Reservar por WhatsApp
+        </a>
+        <div class="info-rows">
+          <div class="info-row">
+            <span class="info-row__ico">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div><strong>Dirección</strong>Av. Italia 1254, Providencia, Santiago</div>
+          </div>
+          <div class="info-row">
+            <span class="info-row__ico">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <div><strong>Horario</strong>Lunes a Sábado · 12:00 – 16:00</div>
+          </div>
+          <div class="info-row">
+            <span class="info-row__ico">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.38 2 2 0 0 1 3.93 1.13h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div><strong>Teléfono</strong>+56 9 8868 6466</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev d1 map-box">
+        <div class="map-ph">
+          <div class="map-pin">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <p>Av. Italia 1254<br>Providencia, Santiago</p>
+        </div>
+        <a href="https://maps.google.com" target="_blank" rel="noopener" class="map-link">
+          Ver en Google Maps →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__logo">El Fogón <span>de la Abuela</span></div>
+    <p class="footer__copy">El Fogón de la Abuela · Providencia · 2026</p>
+  </div>
+</footer>
+
+<!-- DEMO BANNER -->
+<div class="demo-bar">
+  <span class="demo-bar__dot"></span>
+  Demo creado por <strong style="margin:0 4px">Dante Visible</strong> —
+  <a href="../index.html">¿Quieres tu sitio web?</a>
+</div>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+
+const burger = document.getElementById('burger');
+const mob = document.getElementById('mob');
+let open = false;
+burger.addEventListener('click', () => {
+  open = !open;
+  burger.classList.toggle('open', open);
+  mob.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMob() {
+  open = false;
+  burger.classList.remove('open');
+  mob.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rev:not(.in)').forEach(el => obs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+});
+</script>
+</body>
+</html>
