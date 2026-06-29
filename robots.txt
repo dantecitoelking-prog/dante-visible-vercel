@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dantevisible.com/sitemap.xml
