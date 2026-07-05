@@ -328,6 +328,19 @@ ul{list-style:none}
 .vitrina__cta-wrap{text-align:center;margin-top:20px}
 .vitrina__cta{display:inline-flex;align-items:center;gap:9px;background:#1A9E6E;color:#fff;padding:13px 28px;border-radius:12px;font-size:15px;font-weight:500;transition:all var(--t)}
 .vitrina__cta:hover{background:#168A5E;transform:translateY(-1px);box-shadow:0 8px 28px rgba(26,158,110,.25)}
+.reservas-card{margin-top:20px;display:flex;flex-direction:column;gap:20px;background:#fff;border:2px solid #1A9E6E;border-radius:var(--r-lg);padding:28px 32px;transition:all var(--t)}
+.reservas-card:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(26,158,110,.12)}
+@media(min-width:768px){.reservas-card{flex-direction:row;align-items:center;justify-content:space-between;gap:40px}}
+.reservas-card__left{display:flex;align-items:flex-start;gap:18px;flex:1}
+.reservas-card__ico{width:48px;height:48px;border-radius:12px;background:#E3F5EE;display:flex;align-items:center;justify-content:center;color:#1A9E6E;flex-shrink:0;margin-top:2px}
+.reservas-card__badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1A9E6E;background:#E3F5EE;padding:2px 10px;border-radius:100px;margin-bottom:8px}
+.reservas-card__h{font-family:var(--font-d);font-size:20px;font-weight:700;color:#0D0D0D;letter-spacing:-.025em;margin-bottom:8px}
+.reservas-card__p{font-size:14px;color:#666;line-height:1.65}
+.reservas-card__right{display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex-shrink:0}
+@media(min-width:768px){.reservas-card__right{align-items:flex-end;min-width:180px}}
+.reservas-card__price{display:flex;align-items:baseline;gap:4px}
+.reservas-card__amt{font-family:var(--font-d);font-size:36px;font-weight:800;color:#0D0D0D;letter-spacing:-.04em;line-height:1}
+.reservas-card__per{font-size:13px;color:#aaa}
 .vitrina__banner{margin-top:48px;background:rgba(26,158,110,.12);border:1px solid rgba(26,158,110,.2);border-radius:var(--r-lg);padding:22px 32px;text-align:center}
 .vitrina__banner p{font-size:15px;color:var(--green);font-weight:500;line-height:1.6}
 
@@ -645,7 +658,7 @@ ul{list-style:none}
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>1 actualización mensual</li>
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Reporte básico mensual</li>
         </ul>
-        <a href="#contacto" class="plan__btn plan__btn--out">Empezar ahora</a>
+        <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20empezar%20con%20el%20Plan%20Visible" target="_blank" rel="noopener noreferrer" class="plan__btn plan__btn--out">Empezar ahora</a>
       </div>
 
       <div class="rev d1 plan plan--feat">
@@ -665,7 +678,7 @@ ul{list-style:none}
           <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Foto de portada profesional</li>
           <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><strong>Garantía de resultados 30 días</strong></li>
         </ul>
-        <a href="#contacto" class="plan__btn plan__btn--fill">Empezar ahora</a>
+        <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20empezar%20con%20el%20Plan%20Taller%20Visible" target="_blank" rel="noopener noreferrer" class="plan__btn plan__btn--fill">Empezar ahora</a>
       </div>
 
       <div class="rev d2 plan">
@@ -682,7 +695,7 @@ ul{list-style:none}
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Análisis de competencia mensual</li>
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sesión mensual de 30 minutos</li>
         </ul>
-        <a href="#contacto" class="plan__btn plan__btn--out">Empezar ahora</a>
+        <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20empezar%20con%20el%20Plan%20L%C3%ADder%20del%20Barrio" target="_blank" rel="noopener noreferrer" class="plan__btn plan__btn--out">Empezar ahora</a>
       </div>
 
     </div>
@@ -709,7 +722,7 @@ ul{list-style:none}
       <div class="rev plan">
         <div class="plan__name">Vitrina Básica</div>
         <div class="plan__price">
-          <span class="plan__amt">$199.000</span>
+          <span class="plan__amt">$200.000</span>
           <span class="plan__per">pago único</span>
         </div>
         <div class="plan__hr"></div>
@@ -720,14 +733,14 @@ ul{list-style:none}
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Google Maps integrado</li>
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Entrega en 7 días</li>
         </ul>
-        <a href="#contacto" class="plan__btn plan__btn--out">Empezar ahora</a>
+        <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20la%20Vitrina%20B%C3%A1sica" target="_blank" rel="noopener noreferrer" class="plan__btn plan__btn--out">Empezar ahora</a>
       </div>
 
       <div class="rev d1 plan plan--feat">
         <span class="plan__badge">Más popular</span>
         <div class="plan__name">Vitrina Pro</div>
         <div class="plan__price">
-          <span class="plan__amt">$299.000</span>
+          <span class="plan__amt">$300.000</span>
           <span class="plan__per">pago único</span>
         </div>
         <div class="plan__hr"></div>
@@ -737,15 +750,16 @@ ul{list-style:none}
           <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Formulario de contacto</li>
           <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sección de reseñas y testimonios</li>
           <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Animaciones suaves</li>
+          <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sistema de reservas online incluido</li>
           <li class="feat"><span class="feat__ico feat__ico--g"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><strong>Entrega en 7 días</strong></li>
         </ul>
-        <a href="#contacto" class="plan__btn plan__btn--fill">Empezar ahora</a>
+        <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20la%20Vitrina%20Pro" target="_blank" rel="noopener noreferrer" class="plan__btn plan__btn--fill">Empezar ahora</a>
       </div>
 
       <div class="rev d2 plan">
         <div class="plan__name">Vitrina Pro + Google</div>
         <div class="plan__price">
-          <span class="plan__amt">$399.000</span>
+          <span class="plan__amt">$400.000</span>
           <span class="plan__per">pago único</span>
         </div>
         <div class="plan__hr"></div>
@@ -754,11 +768,33 @@ ul{list-style:none}
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Gestión Google My Business primer mes incluido</li>
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Optimización inicial del perfil de Google</li>
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Reporte de métricas mes 1</li>
+          <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sistema de reservas online incluido</li>
           <li class="feat"><span class="feat__ico feat__ico--m"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1A9E6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Entrega en 7 días</li>
         </ul>
-        <a href="#contacto" class="plan__btn plan__btn--out">Empezar ahora</a>
+        <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20la%20Vitrina%20Pro%20%2B%20Google" target="_blank" rel="noopener noreferrer" class="plan__btn plan__btn--out">Empezar ahora</a>
       </div>
 
+    </div>
+
+    <!-- Página de Reservas Online — add-on -->
+    <div class="reservas-card rev">
+      <div class="reservas-card__left">
+        <div class="reservas-card__ico">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="reservas-card__badge">Nuevo servicio</div>
+          <h3 class="reservas-card__h">Página de Reservas Online</h3>
+          <p class="reservas-card__p">Mini página diseñada con tu foto y logo, calendario integrado, link para Instagram y WhatsApp. Entrega en 48 horas.</p>
+        </div>
+      </div>
+      <div class="reservas-card__right">
+        <div class="reservas-card__price">
+          <span class="reservas-card__amt">$50.000</span>
+          <span class="reservas-card__per">pago único</span>
+        </div>
+        <a href="https://wa.me/56988686466?text=Hola%20Dante%2C%20quiero%20la%20P%C3%A1gina%20de%20Reservas%20Online" target="_blank" rel="noopener noreferrer" class="plan__btn plan__btn--fill" style="text-align:center;display:block">Empezar ahora</a>
+      </div>
     </div>
 
     <p class="vitrina__note rev">No incluye tienda online ni ecommerce. ¿Necesitas algo especial? Conversemos.</p>
