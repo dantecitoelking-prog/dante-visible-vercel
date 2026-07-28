@@ -9,20 +9,21 @@
 <meta name="author" content="Dante Visible"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://dantevisible.com/"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D0D0D'/%3E%3Ctext x='50' y='69' font-family='Arial,sans-serif' font-size='58' font-weight='800' fill='%231A9E6E' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://dantevisible.com/"/>
 <meta property="og:site_name" content="Dante Visible"/>
 <meta property="og:locale" content="es_CL"/>
 <meta property="og:title" content="Google My Business Santiago Chile | Dante Visible"/>
 <meta property="og:description" content="Gestiono tu Google My Business para que tu negocio aparezca primero en Santiago, Chile. Talleres, clínicas, restaurantes, barberías y más. Desde $50.000/mes."/>
-<meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bd86c030-ccdc-4fda-a420-ffa4df073a17/id-preview-3c7587ac--45252767-1da4-43a0-9fd5-48bb32f8326f.lovable.app-1781571011700.png"/>
+<meta property="og:image" content="https://dantevisible.com/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@dantevisible"/>
 <meta name="twitter:title" content="Google My Business Santiago Chile | Dante Visible"/>
 <meta name="twitter:description" content="Gestiono tu Google My Business para que tu negocio aparezca primero en Santiago. Talleres, clínicas, restaurantes y barberías. Desde $50.000/mes."/>
-<meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bd86c030-ccdc-4fda-a420-ffa4df073a17/id-preview-3c7587ac--45252767-1da4-43a0-9fd5-48bb32f8326f.lovable.app-1781571011700.png"/>
+<meta name="twitter:image" content="https://dantevisible.com/og-image.png"/>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 <script type="application/ld+json">
 {
@@ -204,6 +205,12 @@ ul{list-style:none}
 .nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav__burger.open span:nth-child(2){opacity:0}
 .nav__burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:768px){
+  .nav__inner{display:grid;grid-template-columns:auto 1fr auto;column-gap:24px}
+  .nav__logo{grid-column:1;justify-self:start}
+  .nav__links{grid-column:2;justify-self:center}
+  .nav__cta{grid-column:3;justify-self:end}
+}
 
 /* mobile overlay */
 .mob{position:fixed;inset:0;background:rgba(13,13,13,.97);backdrop-filter:blur(20px);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .3s}
@@ -265,7 +272,7 @@ ul{list-style:none}
 .sec--light .eyebrow{color:#178F5C}
 .sec__h{font-family:var(--font-d);font-size:clamp(32px,4.8vw,58px);font-weight:800;letter-spacing:-.035em;line-height:1.08}
 .sec__sub{margin-top:16px;font-size:17px;line-height:1.68;color:var(--text-muted);max-width:520px}
-.sec--light .sec__sub{color:#777}
+.sec--light .sec__sub{color:#666}
 
 /* ── PROCESS ── */
 .proc__grid{margin-top:64px;display:grid;gap:2px}
@@ -278,7 +285,7 @@ ul{list-style:none}
 .step__ico{width:44px;height:44px;border-radius:10px;background:#E3F5EE;display:flex;align-items:center;justify-content:center;color:#1A9E6E;transition:transform 0.3s var(--ease)}
 .step:hover .step__ico{transform:scale(1.1)}
 .step__h{font-family:var(--font-d);font-size:20px;font-weight:700;color:#0D0D0D;margin-top:20px;letter-spacing:-.02em}
-.step__p{margin-top:10px;font-size:14px;line-height:1.72;color:#777}
+.step__p{margin-top:10px;font-size:14px;line-height:1.72;color:#666}
 
 /* ── WHY ── */
 .why__grid{margin-top:64px;display:grid;gap:14px}

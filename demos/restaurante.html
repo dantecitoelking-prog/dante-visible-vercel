@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>El Fogón de la Abuela — Cocina Chilena · Providencia</title>
 <meta name="description" content="Restaurante de cocina chilena tradicional en Providencia. Cazuela, pastel de choclo, empanadas. Sabor de siempre."/>
+<meta name="robots" content="noindex, follow"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D0D0D'/%3E%3Ctext x='50' y='69' font-family='Arial,sans-serif' font-size='58' font-weight='800' fill='%231A9E6E' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet"/>
@@ -438,27 +440,6 @@ button{cursor:pointer;border:none;background:none;font:inherit}ul{list-style:non
   Demo creada por <a href="../index.html" target="_blank">Dante Visible</a> — ¿Quieres tu sitio web? <a href="../index.html" target="_blank">dantevisible.com</a>
 </div>
 
-<script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
-const burger = document.getElementById('burger'), mob = document.getElementById('mob');
-let open = false;
-burger.addEventListener('click', () => {
-  open = !open; burger.classList.toggle('open', open); mob.classList.toggle('open', open);
-  burger.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : '';
-});
-function closeMob() {
-  open = false; burger.classList.remove('open'); mob.classList.remove('open');
-  burger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
-}
-const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), {threshold:0.08, rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.rev:not(.in)').forEach(el => obs.observe(el));
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); if(open) closeMob(); }
-  });
-});
-</script>
+<script src="assets/shared.js"></script>
 </body>
 </html>
