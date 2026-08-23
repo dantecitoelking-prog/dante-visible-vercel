@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dentistas Alcántara — Clínica dental en Las Condes, Santiago</title>
+<meta name="description" content="Clínica dental en Las Condes, Santiago. Odontología general, ortodoncia, implantes y estética dental con atención cercana. Agenda tu hora hoy."/>
+<meta name="robots" content="noindex, follow"/>
+<meta name="theme-color" content="#1266E0"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231266E0'/%3E%3Ctext x='50' y='71' font-family='Arial,sans-serif' font-size='58' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ==========================================================
+   Dentistas Alcantara - landing page
+   Azul #1266E0 · Celeste #5BC8F5 · Fondo blanco
+   ========================================================== */
+:root{
+  --blue:#1266E0; --blue-d:#0B4CAE; --blue-l:#3D86F0;
+  --celeste:#5BC8F5; --celeste-soft:#E8F5FE; --celeste-line:#D6EBFA;
+  --ink:#0B2545; --ink-soft:#33507A; --muted:#64809F;
+  --white:#FFFFFF; --bg-soft:#F5FAFF; --border:#E4EEF8;
+  --wa:#25D366; --wa-d:#1EB855;
+  --sh-sm:0 2px 8px rgba(11,37,69,.05);
+  --sh:0 12px 32px rgba(11,37,69,.08);
+  --sh-lg:0 26px 70px rgba(11,37,69,.14);
+  --sh-blue:0 14px 34px rgba(18,102,224,.30);
+  --r-sm:12px; --r:18px; --r-lg:26px;
+  --ease:cubic-bezier(.16,1,.3,1); --t:.28s; --nav-h:82px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--white);color:var(--ink);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit;color:inherit}
+button{background:none;border:none;cursor:pointer}
+ul{list-style:none}
+:focus-visible{outline:3px solid rgba(18,102,224,.45);outline-offset:3px;border-radius:8px}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.container{padding:0 32px}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Tipografia */
+.h1{font-size:clamp(33px,8.4vw,60px);font-weight:800;line-height:1.05;letter-spacing:-.035em}
+.h2{font-size:clamp(27px,5.2vw,43px);font-weight:800;line-height:1.13;letter-spacing:-.03em}
+.lead{font-size:clamp(15.5px,2.1vw,18px);color:var(--ink-soft);line-height:1.72}
+.lead strong{color:var(--ink);font-weight:700}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);background:var(--celeste-soft);border:1px solid var(--celeste-line);border-radius:999px;padding:7px 15px;margin-bottom:18px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--celeste);flex:none}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:15.5px;font-weight:700;letter-spacing:-.01em;padding:16px 28px;border-radius:14px;white-space:nowrap;text-align:center;transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),background var(--t),color var(--t),border-color var(--t)}
+.btn svg{flex:none}
+.btn--primary{background:var(--blue);color:#fff;box-shadow:var(--sh-blue)}
+.btn--primary:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 20px 44px rgba(18,102,224,.38)}
+.btn--wa{background:#fff;color:var(--ink);border:1.5px solid var(--border);box-shadow:var(--sh-sm)}
+.btn--wa:hover{border-color:var(--wa);color:var(--wa-d);transform:translateY(-2px);box-shadow:0 14px 32px rgba(37,211,102,.20)}
+.btn--wa svg{color:var(--wa)}
+.btn--light{background:#fff;color:var(--blue);box-shadow:0 12px 30px rgba(3,25,58,.20)}
+.btn--light:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(3,25,58,.28)}
+.btn--block{width:100%}
+
+/* Navegacion */
+.nav{position:fixed;top:12px;left:0;right:0;z-index:120}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(228,238,248,.9);border-radius:999px;padding:11px 11px 11px 18px;box-shadow:0 6px 24px rgba(11,37,69,.06);transition:padding var(--t) var(--ease),box-shadow var(--t) var(--ease),background var(--t)}
+.nav.compact .nav__inner{padding:7px 7px 7px 16px;background:rgba(255,255,255,.95);box-shadow:0 10px 34px rgba(11,37,69,.13)}
+.nav__brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.nav__mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(140deg,var(--blue),var(--celeste));display:grid;place-items:center;color:#fff;flex:none;box-shadow:0 6px 16px rgba(18,102,224,.32);transition:all var(--t) var(--ease)}
+.nav.compact .nav__mark{width:30px;height:30px;border-radius:9px}
+.nav__brand span{color:var(--blue)}
+.nav__links{display:none;align-items:center;gap:2px}
+.nav__link{font-size:14.5px;font-weight:600;color:var(--ink-soft);padding:9px 14px;border-radius:999px;transition:color var(--t),background var(--t)}
+.nav__link:hover,.nav__link.active{color:var(--blue);background:var(--celeste-soft)}
+.nav__cta{display:none}
+.nav__burger{display:grid;place-items:center;width:42px;height:42px;border-radius:999px;background:var(--celeste-soft);color:var(--blue);flex:none}
+.nav__burger span{display:block;width:17px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+.nav__burger span+span{margin-top:4px}
+.nav__burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav__burger.open span:nth-child(2){opacity:0}
+.nav__burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(min-width:1000px){
+  .nav__links,.nav__cta{display:flex}
+  .nav__burger{display:none}
+  .nav__cta{font-size:14.5px;padding:12px 22px}
+}
+.drawer{position:fixed;inset:0;z-index:115;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);display:flex;flex-direction:column;justify-content:center;padding:92px 26px 34px;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.drawer.open{opacity:1;pointer-events:auto}
+.drawer a{font-size:23px;font-weight:700;letter-spacing:-.02em;padding:15px 4px;border-bottom:1px solid var(--border)}
+.drawer .btn{margin-top:26px;border-bottom:none}
+@media(min-width:1000px){.drawer{display:none}}
+
+/* Hero */
+.hero{position:relative;padding:calc(var(--nav-h) + 24px) 0 60px;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-280px;right:-200px;width:660px;height:660px;border-radius:50%;background:radial-gradient(circle,rgba(91,200,245,.30) 0%,rgba(91,200,245,0) 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-180px;left:-190px;width:470px;height:470px;border-radius:50%;background:radial-gradient(circle,rgba(18,102,224,.13) 0%,rgba(18,102,224,0) 70%);pointer-events:none}
+.hero__grid{position:relative;display:grid;gap:46px;align-items:center}
+.hero__pill-row{display:flex;align-items:center;gap:13px;margin-bottom:22px}
+.hero__pill{width:126px;height:50px;border-radius:999px;flex:none;overflow:hidden;border:3px solid #fff;box-shadow:var(--sh);position:relative}
+.hero__rating b{display:block;font-size:13.5px;font-weight:700;line-height:1.25}
+.hero__rating span{font-size:12.5px;color:var(--muted);line-height:1.25}
+.stars{display:flex;gap:2px;margin-bottom:2px}
+.stars svg{width:13px;height:13px;fill:#FFB020}
+.h1 em{font-style:normal;color:var(--blue)}
+.h1 .inline-ph{display:none;width:100px;height:42px;border-radius:999px;vertical-align:middle;margin:0 4px 9px;border:3px solid #fff;box-shadow:var(--sh-sm);overflow:hidden;position:relative}
+@media(min-width:620px){.h1 .inline-ph{display:inline-block}}
+.hero__sub{margin:20px 0 30px;max-width:520px}
+.hero__actions{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+@media(min-width:480px){.hero__actions{flex-direction:row;flex-wrap:wrap}}
+.hero__trust{display:flex;flex-wrap:wrap;gap:9px}
+.trust{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink-soft);background:var(--bg-soft);border:1px solid var(--border);border-radius:999px;padding:9px 15px}
+.trust svg{color:var(--blue);flex:none}
+.hero__art{position:relative;display:flex;justify-content:center}
+.hero__stage{position:relative;width:100%;max-width:470px;aspect-ratio:1/1;background:linear-gradient(150deg,#EAF6FE 0%,#D7EDFB 48%,#C2E4F8 100%);border-radius:38% 62% 55% 45%/48% 42% 58% 52%;display:grid;place-items:center;box-shadow:inset 0 -24px 60px rgba(18,102,224,.10);animation:morph 18s ease-in-out infinite}
+@keyframes morph{0%,100%{border-radius:38% 62% 55% 45%/48% 42% 58% 52%}50%{border-radius:56% 44% 40% 60%/42% 56% 44% 58%}}
+.hero__tooth{width:56%;filter:drop-shadow(0 26px 44px rgba(11,37,69,.22))}
+.float-card{position:absolute;background:#fff;border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh-lg);display:flex;align-items:center;gap:11px;border:1px solid var(--border)}
+.float-card b{display:block;font-size:16px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.float-card span{font-size:11.5px;color:var(--muted);line-height:1.3}
+.float-card--a{top:5%;left:-6px;animation:bob 6s ease-in-out infinite}
+.float-card--b{bottom:6%;right:-8px;animation:bob 6s ease-in-out infinite .9s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-card__ico{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;flex:none}
+.ico-blue{background:var(--celeste-soft);color:var(--blue)}
+.ico-green{background:#E6F9EE;color:var(--wa-d)}
+.avatars{display:flex}
+.avatars span{width:29px;height:29px;border-radius:50%;border:2.5px solid #fff;margin-left:-10px;background:linear-gradient(140deg,var(--celeste),var(--blue));display:grid;place-items:center;font-size:10.5px;font-weight:800;color:#fff}
+.avatars span:first-child{margin-left:0}
+@media(min-width:980px){
+  .hero{padding:calc(var(--nav-h) + 52px) 0 96px}
+  .hero__grid{grid-template-columns:1.05fr .95fr;gap:50px}
+}
+
+/* Secciones */
+.section{padding:70px 0}
+@media(min-width:980px){.section{padding:102px 0}}
+.section--soft{background:var(--bg-soft)}
+.section__head{max-width:640px;margin-bottom:42px}
+.section__head--center{margin-left:auto;margin-right:auto;text-align:center}
+.section__head p{margin-top:14px}
+
+/* Servicios */
+.svc-grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:560px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.svc-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+.svc{position:relative;overflow:hidden;background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:26px 24px 28px;transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),border-color var(--t)}
+.svc::after{content:'';position:absolute;right:-40%;bottom:-60%;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(91,200,245,.20),transparent 70%);opacity:0;transition:opacity var(--t)}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--sh);border-color:var(--celeste-line)}
+.svc:hover::after{opacity:1}
+.svc__ico{position:relative;z-index:1;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;margin-bottom:17px;background:linear-gradient(145deg,var(--celeste-soft),#DCF0FD);color:var(--blue);transition:background var(--t),color var(--t),transform var(--t) var(--ease)}
+.svc:hover .svc__ico{background:linear-gradient(145deg,var(--blue),var(--blue-l));color:#fff;transform:scale(1.06)}
+.svc h3{position:relative;z-index:1;font-size:17.5px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px}
+.svc p{position:relative;z-index:1;font-size:14.2px;color:var(--muted);line-height:1.62}
+.svc-foot{margin-top:32px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+@media(min-width:680px){.svc-foot{flex-direction:row;align-items:center;justify-content:space-between}}
+.svc-foot p{font-size:15px;font-weight:600;color:var(--ink-soft)}
+
+/* Como trabajamos */
+.steps{display:grid;gap:16px;position:relative}
+@media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr);gap:26px}}
+.step{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 26px 30px;box-shadow:var(--sh-sm);transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+.step:hover{transform:translateY(-5px);box-shadow:var(--sh)}
+.step__n{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;font-size:20px;font-weight:800;color:#fff;background:linear-gradient(145deg,var(--blue),var(--blue-l));box-shadow:0 10px 24px rgba(18,102,224,.28);margin-bottom:18px}
+.step h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
+.step p{font-size:14.6px;color:var(--muted);line-height:1.68}
+.step__link{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue)}
+.step__link svg{transition:transform var(--t) var(--ease)}
+.step__link:hover svg{transform:translateX(4px)}
+@media(min-width:900px){
+  .step::after{content:'';position:absolute;top:56px;right:-26px;width:26px;height:2px;background:repeating-linear-gradient(90deg,var(--celeste-line) 0 6px,transparent 6px 12px)}
+  .step:last-child::after{display:none}
+}
+
+/* Quienes somos */
+.about{display:grid;gap:38px;align-items:center}
+@media(min-width:960px){.about{grid-template-columns:.92fr 1.08fr;gap:56px}}
+.about__media{position:relative}
+.about__ph{aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;position:relative;box-shadow:var(--sh)}
+.about__badge{position:absolute;left:16px;bottom:-18px;right:16px;background:#fff;border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-lg);padding:15px 18px;display:flex;gap:14px;align-items:center}
+@media(min-width:960px){.about__badge{left:auto;right:-22px;bottom:26px;width:250px}}
+.about__badge b{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em}
+.about__badge span{font-size:12.5px;color:var(--muted);line-height:1.4}
+.ph-note{display:inline-flex;align-items:center;gap:8px;margin:16px 0 0;padding:7px 13px;border-radius:9px;background:#FFF8E8;border:1px dashed #F0CE7E;font-size:12.5px;color:#8A6A1F;line-height:1.45}
+.ph-note svg{flex:none;color:#C99A2E}
+.about__list{display:grid;gap:12px;margin:24px 0 28px}
+.about__list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink-soft);line-height:1.6}
+.about__list svg{flex:none;margin-top:3px;color:var(--blue)}
+.about__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:24px;border-top:1px solid var(--border)}
+.about__stats b{display:block;font-size:clamp(22px,4vw,29px);font-weight:800;letter-spacing:-.03em;color:var(--blue);line-height:1.1}
+.about__stats span{font-size:12.5px;color:var(--muted);line-height:1.35}
+
+/* Contacto */
+.contact{display:grid;gap:20px}
+@media(min-width:960px){.contact{grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh);padding:28px 24px}
+@media(min-width:768px){.card{padding:34px 32px}}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13.5px;font-weight:700;margin-bottom:7px}
+.field label span{color:var(--muted);font-weight:500}
+.field input,.field textarea{width:100%;background:var(--bg-soft);border:1.5px solid var(--border);border-radius:var(--r-sm);padding:13px 15px;font-size:15px;transition:border-color var(--t),background var(--t),box-shadow var(--t)}
+.field textarea{resize:vertical;min-height:110px}
+.field input::placeholder,.field textarea::placeholder{color:#9BB2C9}
+.field input:focus,.field textarea:focus{outline:none;background:#fff;border-color:var(--blue);box-shadow:0 0 0 4px rgba(18,102,224,.12)}
+.field.error input,.field.error textarea{border-color:#E5484D;background:#FFF6F6}
+.field__err{display:none;font-size:12.5px;font-weight:600;color:#D13438;margin-top:6px}
+.field.error .field__err{display:block}
+.form__note{font-size:12.5px;color:var(--muted);margin-top:14px;text-align:center;line-height:1.5}
+.aside{display:grid;gap:20px}
+.wa-card{background:linear-gradient(155deg,var(--blue) 0%,#1B7BEA 55%,var(--celeste) 160%);color:#fff;border-radius:var(--r-lg);padding:30px 26px;box-shadow:var(--sh-blue);position:relative;overflow:hidden}
+.wa-card::after{content:'';position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.10)}
+.wa-card h3{position:relative;z-index:1;font-size:22px;font-weight:800;letter-spacing:-.025em;margin-bottom:9px;line-height:1.2}
+.wa-card p{position:relative;z-index:1;font-size:14.5px;color:rgba(255,255,255,.86);line-height:1.65;margin-bottom:22px}
+.wa-card .btn{position:relative;z-index:1}
+.wa-card__hint{position:relative;z-index:1;margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.75);text-align:center}
+.info-list{display:grid;gap:4px}
+.info{display:flex;gap:14px;align-items:flex-start;padding:15px 6px;border-bottom:1px solid var(--border)}
+.info:last-child{border-bottom:none}
+.info__ico{width:42px;height:42px;border-radius:13px;background:var(--celeste-soft);color:var(--blue);display:grid;place-items:center;flex:none}
+.info b{display:block;font-size:14.5px;font-weight:700;margin-bottom:2px}
+.info span,.info a{font-size:14px;color:var(--muted);line-height:1.55}
+.info a:hover{color:var(--blue)}
+.map-ph{height:170px;border-radius:var(--r);overflow:hidden;position:relative;margin-top:4px}
+
+/* Placeholders de imagen */
+.ph{position:relative;width:100%;height:100%;display:grid;place-items:center;gap:8px;align-content:center;background:linear-gradient(140deg,#EAF6FE 0%,#D2EAFA 55%,#BCDFF7 100%);color:#6F9BC2;text-align:center;padding:10px}
+.ph::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.55) 1px,transparent 1px);background-size:14px 14px;opacity:.7}
+.ph svg{position:relative;z-index:1;opacity:.9}
+.ph__label{position:relative;z-index:1;font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;line-height:1.3}
+.hero__pill .ph__label,.inline-ph .ph__label{display:none}
+.hero__pill .ph svg,.inline-ph .ph svg{opacity:.75}
+
+/* Footer */
+.footer{background:#08203F;color:#fff;padding:56px 0 78px;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:-160px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(91,200,245,.16),transparent 70%)}
+.footer__grid{position:relative;z-index:1;display:grid;gap:34px;padding-bottom:34px}
+@media(min-width:820px){.footer__grid{grid-template-columns:1.5fr 1fr 1fr}}
+.footer__brand{display:flex;align-items:center;gap:11px;font-size:19px;font-weight:800;letter-spacing:-.03em;margin-bottom:14px}
+.footer__brand .nav__mark{width:36px;height:36px}
+.footer p.footer__about{font-size:14.2px;color:rgba(255,255,255,.62);line-height:1.72;max-width:330px}
+.footer__t{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:16px}
+.footer__list{display:grid;gap:11px}
+.footer__list li{display:flex;gap:11px;align-items:flex-start;font-size:14.2px;color:rgba(255,255,255,.68);line-height:1.55}
+.footer__list svg{flex:none;margin-top:3px;color:var(--celeste)}
+.footer__list a:hover{color:#fff}
+.socials{display:flex;gap:10px;margin-top:20px}
+.social{width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);display:grid;place-items:center;color:rgba(255,255,255,.75);transition:all var(--t) var(--ease)}
+.social:hover{background:var(--celeste);border-color:var(--celeste);color:#08203F;transform:translateY(-3px)}
+.footer__bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.10);padding-top:22px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;font-size:12.5px;color:rgba(255,255,255,.42)}
+@media(min-width:640px){.footer__bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+
+/* WhatsApp flotante */
+.wa-float{position:fixed;right:18px;bottom:88px;z-index:130;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;border-radius:999px;padding:14px;box-shadow:0 12px 32px rgba(37,211,102,.42);transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),background var(--t)}
+.wa-float span{display:none;font-size:14.5px;font-weight:700;padding-right:6px}
+.wa-float:hover{background:var(--wa-d);transform:translateY(-3px);box-shadow:0 18px 44px rgba(37,211,102,.52)}
+.wa-float::before{content:'';position:absolute;inset:0;border-radius:999px;border:2px solid rgba(37,211,102,.45);animation:ring 2.6s ease-out infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+@media(min-width:640px){
+  .wa-float{right:26px;bottom:26px;padding:14px 20px 14px 16px}
+  .wa-float span{display:block}
+}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* Barra demo */
+.demo-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:125;display:flex;align-items:center;gap:8px;background:#08203F;color:#fff;padding:9px 18px;border-radius:999px;font-size:12.5px;font-weight:600;box-shadow:0 10px 30px rgba(8,32,63,.35);white-space:nowrap;max-width:calc(100vw - 24px);overflow:hidden;text-overflow:ellipsis}
+.demo-bar a{color:var(--celeste);text-decoration:underline;text-underline-offset:2px;font-weight:700}
+.demo-bar__dot{width:6px;height:6px;border-radius:50%;background:var(--celeste);flex:none}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+.ph-txt{background:#FFF3CF;color:#7A5B12;border-radius:5px;padding:1px 6px;font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="#inicio" class="nav__brand" aria-label="Dentistas Alcántara, ir al inicio">
+        <span class="nav__mark" aria-hidden="true">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-2.2 0-3 .9-4.8.9C5 3.9 3.5 5.3 3.5 8c0 2.5.9 4.5 1.6 7 .6 2 .9 3.8 1.2 5.6.3 1.6.8 2.9 1.7 2.9 1 0 1.3-1.6 1.7-3.4.3-1.6.7-2.7 1.3-2.7s1 1.1 1.3 2.7c.4 1.8.7 3.4 1.7 3.4.9 0 1.4-1.3 1.7-2.9.3-1.8.6-3.6 1.2-5.6.7-2.5 1.6-4.5 1.6-7 0-2.7-1.5-4.1-3.7-4.1C15 3.9 14.2 3 12 3Z"/></svg>
+        </span>
+        Dentistas <span>Alcántara</span>
+      </a>
+
+      <div class="nav__links">
+        <a href="#inicio" class="nav__link">Inicio</a>
+        <a href="#servicios" class="nav__link">Servicios</a>
+        <a href="#proceso" class="nav__link">Cómo trabajamos</a>
+        <a href="#nosotros" class="nav__link">Quiénes somos</a>
+        <a href="#contacto" class="nav__link">Contacto</a>
+      </div>
+
+      <a href="#contacto" class="btn btn--primary nav__cta">Agendar hora</a>
+
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer">
+  <a href="#inicio" data-close>Inicio</a>
+  <a href="#servicios" data-close>Servicios</a>
+  <a href="#proceso" data-close>Cómo trabajamos</a>
+  <a href="#nosotros" data-close>Quiénes somos</a>
+  <a href="#contacto" data-close>Contacto</a>
+  <a href="#contacto" class="btn btn--primary btn--block" data-close>Agendar hora</a>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero__grid">
+
+      <div class="hero__copy">
+        <div class="hero__pill-row reveal">
+          <div class="hero__pill">
+            <div class="ph"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7a2 2 0 0 1 2-2h2l1.5-2h7L17 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="12" r="3.5"/></svg><span class="ph__label">Foto</span></div>
+          </div>
+          <div class="hero__rating">
+            <div class="stars" role="img" aria-label="Calificación por completar">
+              <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1z"/></svg>
+            </div>
+            <b><mark class="ph-txt">[N]</mark> de 5 en reseñas</b>
+            <span>Pacientes de Las Condes y alrededores</span>
+          </div>
+        </div>
+
+        <h1 class="h1 reveal">
+          Sonríe sin
+          <span class="inline-ph"><span class="ph"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01"/></svg><span class="ph__label">Foto</span></span></span>
+          pensarlo<br><em>dos veces.</em>
+        </h1>
+
+        <p class="lead hero__sub reveal">
+          Atención dental integral en <strong>Las Condes, Santiago</strong>. Te explicamos cada paso antes de empezar,
+          con presupuesto claro y horarios que respetan tu tiempo.
+        </p>
+
+        <div class="hero__actions reveal">
+          <a href="#contacto" class="btn btn--primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/></svg>
+            Agendar hora
+          </a>
+          <a href="https://wa.me/56900000000?text=Hola%2C%20quiero%20agendar%20una%20hora%20en%20Dentistas%20Alc%C3%A1ntara" target="_blank" rel="noopener" class="btn btn--wa" data-wa>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+
+        <div class="hero__trust reveal">
+          <span class="trust"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Confirmamos tu hora el mismo día</span>
+          <span class="trust"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Presupuesto sin costo</span>
+          <span class="trust"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Urgencias el mismo día</span>
+        </div>
+      </div>
+
+      <div class="hero__art reveal">
+        <div class="hero__stage">
+          <svg class="hero__tooth" viewBox="0 0 200 230" role="img" aria-label="Ilustración de un diente sano">
+            <defs>
+              <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FFFFFF"/><stop offset="55%" stop-color="#F2FAFF"/><stop offset="100%" stop-color="#D8EEFB"/>
+              </linearGradient>
+              <linearGradient id="tg2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".95"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#tg)" d="M100 14c-21 0-28 9-46 9C35 23 20 36 20 61c0 23 9 42 15 65 5 19 8 36 11 53 3 15 8 27 16 27 9 0 13-15 16-32 3-15 6-25 12-25s9 10 12 25c3 17 7 32 16 32 8 0 13-12 16-27 3-17 6-34 11-53 6-23 15-42 15-65 0-25-15-38-34-38-18 0-25-9-46-9Z"/>
+            <path fill="url(#tg2)" d="M74 40c14-8 34-9 48-3 6 3 4 9-3 8-14-3-27-2-38 3-7 3-12-4-7-8Z"/>
+            <circle cx="132" cy="72" r="7" fill="#FFFFFF" opacity=".85"/>
+          </svg>
+        </div>
+
+        <div class="float-card float-card--a">
+          <span class="float-card__ico ico-blue" aria-hidden="true">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div><b>Las Condes</b><span>A pasos del metro</span></div>
+        </div>
+
+        <div class="float-card float-card--b">
+          <span class="avatars" aria-hidden="true"><span>C</span><span>M</span><span>J</span></span>
+          <div><b><mark class="ph-txt">[N]</mark></b><span>pacientes atendidos</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="section section--soft" id="servicios">
+  <div class="container">
+    <div class="section__head section__head--center reveal">
+      <span class="eyebrow">Especialidades</span>
+      <h2 class="h2">Todo lo que tu boca necesita, en un solo lugar</h2>
+      <p class="lead">Un equipo de especialistas trabajando en conjunto, para que no tengas que ir de clínica en clínica.</p>
+    </div>
+
+    <div class="svc-grid">
+
+      <article class="svc reveal">
+        <div class="svc__ico" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2.2 0-3 .9-4.8.9C5 3.9 3.5 5.3 3.5 8c0 2.5.9 4.5 1.6 7 .6 2 .9 3.8 1.2 5.6.3 1.6.8 2.9 1.7 2.9 1 0 1.3-1.6 1.7-3.4.3-1.6.7-2.7 1.3-2.7s1 1.1 1.3 2.7c.4 1.8.7 3.4 1.7 3.4.9 0 1.4-1.3 1.7-2.9.3-1.8.6-3.6 1.2-5.6.7-2.5 1.6-4.5 1.6-7 0-2.7-1.5-4.1-3.7-4.1C15 3.9 14.2 3 12 3Z"/></svg></div>
+        <h3>Odontología general</h3>
+        <p>Limpiezas, tapaduras y controles preventivos para mantener todo en orden.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__ico" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18M3 15h18"/><rect x="6" y="6.5" width="4" height="5" rx="1.2"/><rect x="14" y="12.5" width="4" height="5" rx="1.2"/></svg></div>
+        <h3>Ortodoncia</h3>
+        <p>Brackets y alineadores transparentes para ordenar tu mordida sin apuro.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__ico" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c3.3 0 5.5 2.2 5.5 4.8S15.3 12 12 12 6.5 9.9 6.5 7.3 8.7 2.5 12 2.5Z"/><path d="M12 12v9.5M9.5 15h5M10 18h4M10.8 21h2.4"/></svg></div>
+        <h3>Implantes</h3>
+        <p>Recupera piezas perdidas con soluciones fijas que se ven y funcionan natural.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__ico" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2 0-2.7.8-4.3.8-2 0-3.4 1.3-3.4 3.7 0 2.3.8 4 1.5 6.2.5 1.8.8 3.4 1 5 .3 1.5.8 2.6 1.6 2.6.9 0 1.2-1.4 1.5-3"/><path d="M12 3c2 0 2.7.8 4.3.8 2 0 3.4 1.3 3.4 3.7 0 2.3-.8 4-1.5 6.2-.5 1.8-.8 3.4-1 5-.3 1.5-.8 2.6-1.6 2.6-.9 0-1.2-1.4-1.5-3"/><path d="M12 8.5v6"/><path d="m9.8 12.5 2.2 2.5 2.2-2.5"/></svg></div>
+        <h3>Endodoncia</h3>
+        <p>Tratamientos de conducto para salvar el diente y sacarte el dolor.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__ico" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m10 3 1.9 4.9L16.8 9.8l-4.9 1.9L10 16.6 8.1 11.7 3.2 9.8 8.1 7.9z"/><path d="m17.5 14.5.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9z"/></svg></div>
+        <h3>Estética dental</h3>
+        <p>Blanqueamiento y carillas para un resultado natural, no artificial.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__ico" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.2s1.3 2 3.5 2 3.5-2 3.5-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div>
+        <h3>Odontopediatría</h3>
+        <p>Primera visita sin miedo: los niños se van contentos y quieren volver.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__ico" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 19 6v5.6c0 4.4-3 8.2-7 9.6-4-1.4-7-5.2-7-9.6V6z"/><path d="M8.8 12.2s1.2 1.6 3.2 1.6 3.2-1.6 3.2-1.6"/></svg></div>
+        <h3>Periodoncia</h3>
+        <p>Encías sanas y tratamiento de sangrado, la base de todo lo demás.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__ico" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1"/><path d="M20.8 4.2v5.2h-5.2"/><path d="M12 8.5v4l2.5 1.5"/></svg></div>
+        <h3>Rehabilitación oral</h3>
+        <p>Coronas, puentes y prótesis para volver a masticar con confianza.</p>
+      </article>
+
+    </div>
+
+    <div class="svc-foot reveal">
+      <p>¿No sabes cuál necesitas? Lo definimos juntos en la evaluación inicial.</p>
+      <a href="#contacto" class="btn btn--primary">Agendar hora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO TRABAJAMOS ============ -->
+<section class="section" id="proceso">
+  <div class="container">
+    <div class="section__head section__head--center reveal">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2 class="h2">Tres pasos y ya estás en el sillón</h2>
+      <p class="lead">Sin vueltas ni trámites eternos. Así funciona desde que nos escribes hasta que empezamos.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step__n" aria-hidden="true">1</div>
+        <h3>Agendas tu hora</h3>
+        <p>Por WhatsApp, teléfono o el formulario de esta página. Te confirmamos día y hora el mismo día, sin esperas.</p>
+        <a href="#contacto" class="step__link">Agendar ahora <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="step reveal">
+        <div class="step__n" aria-hidden="true">2</div>
+        <h3>Evaluación inicial</h3>
+        <p>Revisamos tu boca con calma, tomamos las radiografías necesarias y te explicamos en palabras simples qué encontramos.</p>
+      </article>
+
+      <article class="step reveal">
+        <div class="step__n" aria-hidden="true">3</div>
+        <h3>Plan de tratamiento personalizado</h3>
+        <p>Recibes las alternativas, los tiempos y el presupuesto por escrito. Tú decides qué hacer y cuándo, sin presiones.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUIÉNES SOMOS ============ -->
+<section class="section section--soft" id="nosotros">
+  <div class="container">
+    <div class="about">
+
+      <div class="about__media reveal">
+        <div class="about__ph">
+          <div class="ph">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20a5 5 0 0 0-10 0"/><circle cx="12" cy="9" r="3.6"/><path d="M20.5 19a4.4 4.4 0 0 0-3.2-4.2M6.7 14.8A4.4 4.4 0 0 0 3.5 19"/></svg>
+            <span class="ph__label">Foto del equipo</span>
+          </div>
+        </div>
+        <div class="about__badge">
+          <span class="float-card__ico ico-blue" aria-hidden="true">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 19 6v5.6c0 4.4-3 8.2-7 9.6-4-1.4-7-5.2-7-9.6V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <div><b>Nuestro equipo</b><span><mark class="ph-txt">[Indicar credenciales verificables del equipo]</mark></span></div>
+        </div>
+      </div>
+
+      <div class="about__copy reveal">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2 class="h2">Un equipo que te trata como paciente, no como pieza dental</h2>
+
+        <p class="lead" style="margin-top:16px">
+          <mark class="ph-txt">[TEXTO PLACEHOLDER: reemplazar por la historia real de la clínica]</mark>
+          Dentistas Alcántara atiende en Las Condes desde <mark class="ph-txt">[año]</mark>, con un equipo de
+          <mark class="ph-txt">[N]</mark> profesionales que comparten la misma forma de trabajar: escuchar primero,
+          explicar después y tratar solo lo necesario.
+        </p>
+
+        <ul class="about__list">
+          <li>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Diagnóstico explicado.</strong> <mark class="ph-txt">[Cómo se entrega el diagnóstico al paciente]</mark></span>
+          </li>
+          <li>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Tecnología al día.</strong> <mark class="ph-txt">[Equipamiento: radiografía digital, escáner intraoral…]</mark></span>
+          </li>
+          <li>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span><strong>Protocolos de higiene.</strong> <mark class="ph-txt">[Esterilización y protocolos sanitarios]</mark></span>
+          </li>
+        </ul>
+
+        <div class="about__stats">
+          <div><b><mark class="ph-txt">[N]</mark></b><span>pacientes atendidos</span></div>
+          <div><b>8</b><span>especialidades</span></div>
+          <div><b><mark class="ph-txt">[N]</mark></b><span>promedio en reseñas</span></div>
+        </div>
+
+        <p class="ph-note">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+          Las cifras y los textos marcados en amarillo son de ejemplo: reemplazar por los datos reales antes de publicar.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section__head section__head--center reveal">
+      <span class="eyebrow">Agenda tu hora</span>
+      <h2 class="h2">Reserva en menos de un minuto</h2>
+      <p class="lead">Déjanos tus datos y te contactamos para confirmar día y hora. Si prefieres, escríbenos directo por WhatsApp.</p>
+    </div>
+
+    <div class="contact">
+      <div class="card reveal">
+        <form id="form" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre y apellido</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: María González" autocomplete="name"/>
+            <p class="field__err">Escribe tu nombre para saber cómo llamarte.</p>
+          </div>
+
+          <div class="field">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" autocomplete="tel" inputmode="tel"/>
+            <p class="field__err">Necesitamos un número válido para confirmarte la hora.</p>
+          </div>
+
+          <div class="field">
+            <label for="correo">Correo <span>(opcional)</span></label>
+            <input type="email" id="correo" name="correo" placeholder="maria@correo.cl" autocomplete="email"/>
+            <p class="field__err">Revisa el correo, parece que le falta algo.</p>
+          </div>
+
+          <div class="field">
+            <label for="mensaje">¿Qué necesitas? <span>(opcional)</span></label>
+            <textarea id="mensaje" name="mensaje" placeholder="Limpieza, dolor de muela, ortodoncia, evaluación general…"></textarea>
+            <p class="field__err"></p>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Enviar y agendar por WhatsApp
+          </button>
+          <p class="form__note">Al enviar se abre WhatsApp con tu mensaje ya escrito. No compartimos tus datos con terceros.</p>
+        </form>
+      </div>
+
+      <aside class="aside">
+        <div class="wa-card reveal">
+          <h3>¿Prefieres escribir ahora?</h3>
+          <p>Te respondemos en horario de atención y te damos la hora disponible más cercana.</p>
+          <a href="https://wa.me/56900000000?text=Hola%2C%20quiero%20agendar%20una%20hora%20en%20Dentistas%20Alc%C3%A1ntara" target="_blank" rel="noopener" class="btn btn--light btn--block" data-wa>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Abrir WhatsApp
+          </a>
+          <p class="wa-card__hint">Urgencias dentales: atención el mismo día según disponibilidad.</p>
+        </div>
+
+        <div class="card reveal" style="padding-top:22px;padding-bottom:22px">
+          <div class="info-list">
+            <div class="info">
+              <span class="info__ico" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><b>Dirección</b><span><mark class="ph-txt">[Calle y número]</mark>, Las Condes, Santiago</span></div>
+            </div>
+            <div class="info">
+              <span class="info__ico" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1A19.5 19.5 0 0 1 5 12 19.8 19.8 0 0 1 2 3.4 2 2 0 0 1 3.9 1.1h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 8.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg></span>
+              <div><b>Teléfono</b><a href="tel:+56222061380">+56 2 2206 1380</a></div>
+            </div>
+            <div class="info">
+              <span class="info__ico" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l3.5 2"/></svg></span>
+              <div><b>Horario</b><span><mark class="ph-txt">[Lun a Vie 09:00–19:00 · Sáb 09:00–14:00]</mark></span></div>
+            </div>
+          </div>
+          <div class="map-ph">
+            <div class="ph">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="ph__label">Mapa · Las Condes, Santiago</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+
+      <div>
+        <div class="footer__brand">
+          <span class="nav__mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-2.2 0-3 .9-4.8.9C5 3.9 3.5 5.3 3.5 8c0 2.5.9 4.5 1.6 7 .6 2 .9 3.8 1.2 5.6.3 1.6.8 2.9 1.7 2.9 1 0 1.3-1.6 1.7-3.4.3-1.6.7-2.7 1.3-2.7s1 1.1 1.3 2.7c.4 1.8.7 3.4 1.7 3.4.9 0 1.4-1.3 1.7-2.9.3-1.8.6-3.6 1.2-5.6.7-2.5 1.6-4.5 1.6-7 0-2.7-1.5-4.1-3.7-4.1C15 3.9 14.2 3 12 3Z"/></svg>
+          </span>
+          Dentistas Alcántara
+        </div>
+        <p class="footer__about">Clínica dental en Las Condes, Santiago. Odontología general y especialidades, con atención cercana y presupuestos claros.</p>
+        <div class="socials">
+          <a href="#" class="social" aria-label="Instagram de Dentistas Alcántara" data-social>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4"/><path d="M17.6 6.5h.01"/></svg>
+          </a>
+          <a href="#" class="social" aria-label="Facebook de Dentistas Alcántara" data-social>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2.5h-3a5 5 0 0 0-5 5v3H7v4h3v7h4v-7h3l1-4h-4v-3a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/56900000000" target="_blank" rel="noopener" class="social" aria-label="WhatsApp de Dentistas Alcántara" data-wa>
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer__t">Contacto</div>
+        <ul class="footer__list">
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><mark class="ph-txt">[Calle y número]</mark><br>Las Condes, Santiago</span>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1A19.5 19.5 0 0 1 5 12 19.8 19.8 0 0 1 2 3.4 2 2 0 0 1 3.9 1.1h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 8.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg>
+            <a href="tel:+56222061380">+56 2 2206 1380</a>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m21.5 6.5-8.9 5.7a1.9 1.9 0 0 1-2.1 0L2.5 6.5"/></svg>
+            <span><mark class="ph-txt">[correo@dentistasalcantara.cl]</mark></span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__t">Enlaces</div>
+        <ul class="footer__list">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#contacto">Agendar hora</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span id="year">2026</span> Dentistas Alcántara · Las Condes, Santiago de Chile</p>
+      <p>Sitio de demostración · Contenido y datos de ejemplo</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/56900000000?text=Hola%2C%20quiero%20agendar%20una%20hora%20en%20Dentistas%20Alc%C3%A1ntara" target="_blank" rel="noopener" class="wa-float" data-wa aria-label="Escribir por WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<div class="demo-bar">
+  <span class="demo-bar__dot"></span>
+  Demo por <a href="../index.html" target="_blank">Dante Visible</a> · dantevisible.com
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =========================================================
+     CONFIGURACIÓN — cambiar aquí antes de publicar
+     WhatsApp de la clínica en formato internacional, sin "+".
+     Ejemplo Chile: 56912345678
+     ========================================================= */
+  var WHATSAPP = '56900000000';   /* <<< REEMPLAZAR POR EL NÚMERO REAL */
+  var PLACEHOLDER = '56900000000';
+
+  /* Aplica el número a todos los enlaces de WhatsApp de la página */
+  Array.prototype.forEach.call(document.querySelectorAll('a[data-wa]'), function (a) {
+    a.setAttribute('href', a.getAttribute('href').replace(PLACEHOLDER, WHATSAPP));
+  });
+  if (WHATSAPP === PLACEHOLDER && window.console) {
+    console.warn('[Dentistas Alcántara] Falta configurar el número de WhatsApp: edita la constante WHATSAPP.');
+  }
+
+  /* ---------- Nav compacta al hacer scroll ---------- */
+  var nav = document.getElementById('nav');
+  var onScroll = function () { nav.classList.toggle('compact', window.scrollY > 30); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Menú móvil ---------- */
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  var isOpen = false;
+
+  function setMenu(open) {
+    isOpen = open;
+    burger.classList.toggle('open', open);
+    drawer.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function () { setMenu(!isOpen); });
+  Array.prototype.forEach.call(drawer.querySelectorAll('[data-close]'), function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen) { setMenu(false); burger.focus(); }
+  });
+
+  /* ---------- Scroll suave ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id === '#') { e.preventDefault(); return; }
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      if (isOpen) setMenu(false);
+      var top = target.getBoundingClientRect().top + window.scrollY - 92;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+      history.replaceState(null, '', id);
+    });
+  });
+
+  /* ---------- Link activo según sección visible ---------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav__link'));
+  var sections = links.map(function (l) { return document.querySelector(l.getAttribute('href')); });
+  var spy = function () {
+    var pos = window.scrollY + 140, current = 0;
+    sections.forEach(function (s, i) { if (s && s.offsetTop <= pos) current = i; });
+    links.forEach(function (l, i) { l.classList.toggle('active', i === current); });
+  };
+  window.addEventListener('scroll', spy, { passive: true });
+  spy();
+
+  /* ---------- Aparición al hacer scroll (fade + slide up) ---------- */
+  var revealables = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  revealables.forEach(function (el) {
+    var parent = el.parentNode;
+    parent._revealIndex = (parent._revealIndex || 0) + 1;
+    el.style.transitionDelay = Math.min((parent._revealIndex - 1) * 80, 320) + 'ms';
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealables.forEach(function (el) { io.observe(el); });
+  } else {
+    revealables.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Formulario: arma el mensaje de WhatsApp ---------- */
+  var form = document.getElementById('form');
+
+  function fieldOf(input) { return input.closest ? input.closest('.field') : input.parentNode; }
+  function setError(input, on) { fieldOf(input).classList.toggle('error', on); return !on; }
+
+  function validate() {
+    var nombre = form.nombre, telefono = form.telefono, correo = form.correo;
+    var okNombre = setError(nombre, nombre.value.trim().length < 2);
+    var digits = telefono.value.replace(/\D/g, '');
+    var okTel = setError(telefono, digits.length < 8);
+    var mail = correo.value.trim();
+    var okMail = setError(correo, mail !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail));
+    return okNombre && okTel && okMail;
+  }
+
+  Array.prototype.forEach.call(form.querySelectorAll('input'), function (input) {
+    input.addEventListener('input', function () {
+      if (fieldOf(input).classList.contains('error')) validate();
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validate()) {
+      var firstError = form.querySelector('.field.error input');
+      if (firstError) firstError.focus();
+      return;
+    }
+    var lineas = [
+      'Hola Dentistas Alcántara, quiero agendar una hora.',
+      '',
+      'Nombre: ' + form.nombre.value.trim(),
+      'Teléfono: ' + form.telefono.value.trim()
+    ];
+    if (form.correo.value.trim()) lineas.push('Correo: ' + form.correo.value.trim());
+    if (form.mensaje.value.trim()) lineas.push('Motivo: ' + form.mensaje.value.trim());
+
+    window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');
+  });
+
+  /* ---------- Año del footer ---------- */
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
