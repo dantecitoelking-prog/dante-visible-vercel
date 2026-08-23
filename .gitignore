@@ -1,1 +1,6 @@
 .vercel
+apikey_dantevisible.txt
+apikey_dantevisible_agenteia.txt
+*.env
+.env*
+.claude/
