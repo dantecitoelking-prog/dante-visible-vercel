@@ -74,9 +74,8 @@ ul{list-style:none}
 .nav__link{font-size:14.5px;font-weight:600;color:var(--ink-soft);padding:9px 14px;border-radius:999px;transition:color var(--t),background var(--t)}
 .nav__link:hover,.nav__link.active{color:var(--blue);background:var(--celeste-soft)}
 .nav__cta{display:none}
-.nav__burger{display:grid;place-items:center;width:42px;height:42px;border-radius:999px;background:var(--celeste-soft);color:var(--blue);flex:none}
+.nav__burger{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:42px;height:42px;border-radius:999px;background:var(--celeste-soft);color:var(--blue);flex:none}
 .nav__burger span{display:block;width:17px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
-.nav__burger span+span{margin-top:4px}
 .nav__burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .nav__burger.open span:nth-child(2){opacity:0}
 .nav__burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
@@ -107,7 +106,7 @@ ul{list-style:none}
 @media(min-width:620px){.h1 .inline-ph{display:inline-block}}
 .hero__sub{margin:20px 0 30px;max-width:520px}
 .hero__actions{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
-@media(min-width:480px){.hero__actions{flex-direction:row;flex-wrap:wrap}}
+@media(min-width:560px){.hero__actions{flex-direction:row;flex-wrap:wrap}}
 .hero__trust{display:flex;flex-wrap:wrap;gap:9px}
 .trust{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink-soft);background:var(--bg-soft);border:1px solid var(--border);border-radius:999px;padding:9px 15px}
 .trust svg{color:var(--blue);flex:none}
@@ -250,9 +249,12 @@ ul{list-style:none}
 @media(min-width:640px){.footer__bottom{flex-direction:row;justify-content:space-between;text-align:left}}
 
 /* WhatsApp flotante */
-.wa-float{position:fixed;right:18px;bottom:88px;z-index:130;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;border-radius:999px;padding:14px;box-shadow:0 12px 32px rgba(37,211,102,.42);transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),background var(--t)}
+.wa-float{position:fixed;right:18px;bottom:88px;z-index:130;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;border-radius:999px;padding:14px;box-shadow:0 12px 32px rgba(37,211,102,.42);transition:transform .3s var(--ease),box-shadow var(--t) var(--ease),background var(--t),opacity .3s var(--ease)}
 .wa-float span{display:none;font-size:14.5px;font-weight:700;padding-right:6px}
 .wa-float:hover{background:var(--wa-d);transform:translateY(-3px);box-shadow:0 18px 44px rgba(37,211,102,.52)}
+.wa-float.is-hidden{opacity:0;transform:translateY(16px) scale(.86);pointer-events:none}
+body.nav-open .wa-float,body.nav-open .demo-bar{opacity:0;pointer-events:none;transition:opacity .2s var(--ease)}
+.wa-float.is-hidden::before{animation:none}
 .wa-float::before{content:'';position:absolute;inset:0;border-radius:999px;border:2px solid rgba(37,211,102,.45);animation:ring 2.6s ease-out infinite}
 @keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.35);opacity:0}}
 @media(min-width:640px){
@@ -269,6 +271,78 @@ ul{list-style:none}
 .demo-bar a{color:var(--celeste);text-decoration:underline;text-underline-offset:2px;font-weight:700}
 .demo-bar__dot{width:6px;height:6px;border-radius:50%;background:var(--celeste);flex:none}
 
+
+/* ==========================================================
+   MÓVIL (hasta 559px) — ajustes finos para 360–480px
+   ========================================================== */
+@media(max-width:559px){
+  .container{padding:0 18px}
+  .h1{font-size:clamp(31px,8.6vw,38px);line-height:1.08}
+  .h2{font-size:clamp(25px,6.6vw,31px)}
+  .lead{font-size:15.5px}
+  .section{padding:64px 0}
+  .section__head{margin-bottom:32px}
+
+  /* Botones: ancho completo y sin desbordar nunca */
+  .btn{width:100%;padding:15px 18px;font-size:15px;white-space:normal;line-height:1.32}
+  .hero__actions{gap:10px;margin-bottom:26px}
+
+  /* Hero */
+  .hero{padding:calc(var(--nav-h) + 10px) 0 48px}
+  .hero__grid{gap:34px}
+  .hero__pill-row{gap:11px;margin-bottom:18px}
+  .hero__pill{width:92px;height:42px}
+  .hero__rating b{font-size:13px}
+  .hero__rating span{font-size:12px}
+  .hero__sub{margin:16px 0 24px}
+  .hero__trust{gap:8px}
+  .trust{font-size:12.8px;padding:8px 13px}
+  .hero__stage{max-width:296px}
+  .float-card{padding:10px 13px;gap:9px}
+  .float-card b{font-size:15px}
+  .float-card--a{top:2%;left:0}
+  .float-card--b{bottom:2%;right:0}
+
+  /* Servicios y pasos: una sola columna */
+  .svc-grid,.steps{grid-template-columns:1fr}
+  .svc{padding:22px 20px 24px}
+  .step{padding:26px 22px}
+  .svc-foot{margin-top:26px;gap:16px}
+
+  /* Quiénes somos */
+  .about{gap:46px}
+  .about__badge{left:12px;right:12px;padding:13px 15px}
+  .about__list{gap:14px;margin:20px 0 24px}
+  .about__stats{grid-template-columns:1fr;gap:0;padding-top:18px}
+  .about__stats>div{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
+  .about__stats>div:last-child{border-bottom:none;padding-bottom:0}
+  .about__stats b{font-size:25px;min-width:64px}
+  .about__stats span{font-size:13.5px}
+
+  /* Formulario */
+  .card{padding:24px 18px}
+  .field{margin-bottom:18px}
+  /* 16px evita el zoom automático de iOS al enfocar un campo */
+  .field input,.field textarea{font-size:16px;padding:14px 15px}
+  .field textarea{min-height:120px}
+  .wa-card{padding:26px 20px}
+  .info{padding:14px 2px}
+
+  /* Flotantes: que no tapen contenido */
+  .wa-float{right:14px;bottom:76px;padding:13px}
+  .demo-bar{font-size:11.5px;padding:8px 15px;bottom:14px}
+  .footer{padding:48px 0 74px}
+}
+
+/* Pantallas muy angostas (360px y menos) */
+@media(max-width:380px){
+  .nav__brand{font-size:15.5px;gap:8px}
+  .nav__mark{width:31px;height:31px}
+  .nav__inner{padding:9px 9px 9px 14px}
+  .hero__pill{display:none}
+  .eyebrow{font-size:11px;padding:6px 13px}
+  .about__stats b{font-size:23px;min-width:58px}
+}
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   html{scroll-behavior:auto}
@@ -604,7 +678,7 @@ ul{list-style:none}
 
           <button type="submit" class="btn btn--primary btn--block">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-            Enviar y agendar por WhatsApp
+            Agendar por WhatsApp
           </button>
           <p class="form__note">Al enviar se abre WhatsApp con tu mensaje ya escrito. No compartimos tus datos con terceros.</p>
         </form>
@@ -762,6 +836,7 @@ ul{list-style:none}
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     document.body.style.overflow = open ? 'hidden' : '';
+    document.body.classList.toggle('nav-open', open);
   }
   burger.addEventListener('click', function () { setMenu(!isOpen); });
   Array.prototype.forEach.call(drawer.querySelectorAll('[data-close]'), function (a) {
@@ -856,6 +931,20 @@ ul{list-style:none}
 
     window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');
   });
+
+  /* ---------- El botón flotante se esconde donde ya hay CTA de WhatsApp ---------- */
+  var waFloat = document.querySelector('.wa-float');
+  var zones = [document.getElementById('contacto'), document.querySelector('.footer')].filter(Boolean);
+  if (waFloat && zones.length && 'IntersectionObserver' in window) {
+    var state = [];
+    zones.forEach(function (z, i) { state[i] = false; z.setAttribute('data-zone', i); });
+    var zoneIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { state[+e.target.getAttribute('data-zone')] = e.isIntersecting; });
+      var overlapping = state.indexOf(true) !== -1;
+      waFloat.classList.toggle('is-hidden', overlapping);
+    }, { threshold: 0.15 });
+    zones.forEach(function (z) { zoneIo.observe(z); });
+  }
 
   /* ---------- Año del footer ---------- */
   var year = document.getElementById('year');
