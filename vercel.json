@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/auditoria",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeO39JCSQy9uqGmblbnpYGuaWfgC78dQPR13B5LaNBEfa2Emg/viewform?usp=sharing",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
