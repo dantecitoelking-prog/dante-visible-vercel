@@ -1,0 +1,5 @@
+Claude outputs/
+.claude/
+apikey_*.txt
+*.env
+.env*

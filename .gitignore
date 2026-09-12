@@ -4,3 +4,4 @@ apikey_dantevisible_agenteia.txt
 *.env
 .env*
 .claude/
+Claude outputs/
