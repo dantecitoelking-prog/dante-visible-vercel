@@ -1047,6 +1047,10 @@ counterObs.observe(statsSection);
   const email = document.getElementById('email');
   const btype = document.getElementById('btype');
 
+  // Webhook de n8n. Requiere que el nodo Webhook tenga configurado
+  // Options → Allowed Origins (CORS) con https://dantevisible.com
+  const WEBHOOK = 'https://dante-visible-n8n.2glz5p.easypanel.host/webhook/36a6ad53-70d6-4f05-9df8-807067c52588';
+
   const NAME_ALLOWED = /[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9 ]/g;
   const NAME_OK = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9 ]+$/;
   const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
@@ -1134,6 +1138,24 @@ counterObs.observe(statsSection);
       if (first) first.focus();
       return;
     }
+    const datos = {
+      nombre: business.value.trim(),
+      whatsapp: phone.value.trim(),
+      email: email.value.trim(),
+      rubro: btype.value
+    };
+
+    // Aviso a n8n sin esperar respuesta: si el webhook falla o tarda, el lead
+    // igual llega por WhatsApp y el navegador no bloquea la ventana emergente.
+    try {
+      fetch(WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos),
+        keepalive: true
+      }).catch(function () {});
+    } catch (err) {}
+
     const msg = 'Hola Dante, quiero mi auditoría gratuita.\n\n' +
       'Negocio: ' + business.value.trim() + '\n' +
       'WhatsApp: ' + phone.value.trim() + '\n' +
